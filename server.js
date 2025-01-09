@@ -71,7 +71,7 @@ const corsOptions = {
   
   const app = express();
   app.use(cors(corsOptions));
-app.use(express.json());
+  app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 
 // Endpoint to handle form submission
