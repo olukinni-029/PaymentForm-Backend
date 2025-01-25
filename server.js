@@ -84,7 +84,7 @@ app.post('/submit-payment', async (req, res) => {
         return res.status(400).json({ message: 'Email already exists' });
         }
     await paymentData.save();
-    res.status(200).send({ message: 'Failed to make payment!' });
+    res.status(200).send({ message: 'Payment declined,try using another card or contact issuing bank.' });
   } catch (err) {
     if (err.name === 'ValidationError') {
         // Handle validation errors
